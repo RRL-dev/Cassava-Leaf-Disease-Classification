@@ -1,2 +1,2 @@
-# -home-roni-Cassava-Leaf-Disease-Classification
+# Cassava-Leaf-Disease-Classification
 Kaggle Competetion
