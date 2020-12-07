@@ -129,3 +129,4 @@ dmypy.json
 .pyre/
 
 /Data/train_images
+/Check_Point
