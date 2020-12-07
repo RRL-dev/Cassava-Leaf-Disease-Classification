@@ -14,7 +14,7 @@ from torchvision import models
 
 
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
-effnet_path = '/home/roni/רוני/Data_Science/Kaggle/Cassava Leaf Disease Classification/EfficientNet/'
+effnet_path = '/home/roni/Dropbox/Code/Kaggle/Cassava-Leaf-Disease-Classification/Check_Point'
 sys.path.append(effnet_path)
 from dataset import *
 from model import EfficientNet
