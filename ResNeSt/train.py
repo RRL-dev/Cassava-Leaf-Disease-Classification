@@ -119,7 +119,7 @@ def train_val(model, params):
 
 
 
-class Model(nn.Module):3
+class Model(nn.Module):
     def __init__(self, original_model, num_classes):
         super(Model, self).__init__()
         # Everything except the last linear layer
