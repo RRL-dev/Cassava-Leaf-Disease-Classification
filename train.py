@@ -225,3 +225,28 @@ if __name__ == '__main__':
     }
 
     model, loss_hist, metric_hist = train_val(model, params_train)
+
+
+    elif opt.model == "attention":
+
+        sys.path.append(opt.path)
+        from model import ResNet26
+
+        model     = ResNet26(num_classes=5, stem=False).to(device) 
+        optimizer = optim.Adam(model.parameters())
+        epochs    = opt.epoch
+        lr_sch    = optim.lr_scheduler.OneCycleLR(optimizer, max_lr=1e-3, epochs=epochs,
+                                                steps_per_epoch=len(train_dl), pct_start=0.25,)
+
+        params_train = {
+        "num_epochs":    epochs,
+        "optimizer":     optimizer,
+        "loss_func":     criterion,
+        "train_dl":      train_dl,
+        "val_dl":        valid_dl,
+        "lr_scheduler":  lr_sch,
+        "path2weights":  "{}.pt".format(opt.model),
+        "one_cycle":     True
+        }
+
+        model, loss_hist, metric_hist = train_val(model, params_train)
