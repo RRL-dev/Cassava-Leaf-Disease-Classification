@@ -14,7 +14,7 @@ import cv2
 
 
 """Loading the dataframe and filenames"""
-path         = Path("/home/roni/Dropbox/Code/Kaggle/Cassava Leaf Disease Classification/EfficientNet")
+path         = Path("....Kaggle/Cassava-Leaf-Disease-Classification/Data")
 df_path      = path/'train.csv'
 train_path   = path/'train_images'
 train_fnames = train_path.ls()
@@ -38,7 +38,7 @@ std  = [0.2272, 0.2297, 0.2200]
 
 
 """Dataset and DataLoaders"""
-train_tfms = albumentations.Compose([
+train_tfms =    albumentations.Compose([
                 albumentations.RandomResizedCrop(256,256),
                 albumentations.HorizontalFlip(p=0.5),
                 albumentations.ShiftScaleRotate(p=0.5),
@@ -64,7 +64,7 @@ train_tfms = albumentations.Compose([
                 ToTensorV2()], p=1.0)
 
 
-valid_tfms = albumentations.Compose([
+valid_tfms =    albumentations.Compose([
                 albumentations.CenterCrop(256,256,p=1.0),
                 albumentations.Resize(256,256),
                 albumentations.Normalize(
